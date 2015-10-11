@@ -17,7 +17,7 @@ public class Vendor {
         this.vendorName = vendorName;
         this.vendorCategory = vendorCategory;
     }
-    public Vendor(String vendorName, int vendorCategory, Person contact) {
+    public Vendor(String vendorName, int vendorCategory, Person[] contact) {
         this(vendorName,vendorCategory);
         this.contact = contact;
     }
@@ -28,7 +28,7 @@ public class Vendor {
         return vendorCategory;
     }
 
-    public Person getContact() {
+    public Person[] getContact() {
         return contact;
     }
 
@@ -44,9 +44,7 @@ public class Vendor {
         this.vendorCategory = vendorCategory;
     }
 
-    public void setContact(Person contact) {
-        this.contact = contact;
-    }
+    public void setContact(Person[] contact) { this.contact = contact; }
 
     public void setAttachedFiles(Uri[] attachedFiles) {
         this.attachedFiles = attachedFiles;
