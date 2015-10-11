@@ -18,10 +18,18 @@ public class Person {
     }
 
     public Person(String firstName, String lastName, String address, String email) {
+        this(firstName,lastName,address);
+        this.email = email;
+    }
+
+    public Person(String firstName, String lastName, String address) {
+        this(firstName,lastName);
+        this.address = address;
+    }
+
+    public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
-        this.email = email;
     }
 
 
