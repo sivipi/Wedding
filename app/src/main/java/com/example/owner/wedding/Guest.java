@@ -4,7 +4,6 @@ package com.example.owner.wedding;
  * Created by Shelly on 11/10/2015.
  */
 public class Guest {
-
     private Person contactPerson;
     private int subGuestsNumber;
     private String extraInformation;
