@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         boolean a  = false;
-        int a = 7;
+        int b = 7;
         return true;
     }
 
