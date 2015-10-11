@@ -22,32 +22,30 @@ public class Vendor {
         this.contact = contact;
     }
 
-    public String getVendorName() {
-        return vendorName;
-    }
-
-    public void setVendorName(String vendorName) {
-        this.vendorName = vendorName;
-    }
+    public String getVendorName() { return vendorName; }
 
     public int getVendorCategory() {
         return vendorCategory;
-    }
-
-    public void setVendorCategory(int vendorCategory) {
-        this.vendorCategory = vendorCategory;
     }
 
     public Person getContact() {
         return contact;
     }
 
-    public void setContact(Person contact) {
-        this.contact = contact;
-    }
-
     public Uri[] getAttachedFiles() {
         return attachedFiles;
+    }
+
+    public void setVendorName(String vendorName) {
+        this.vendorName = vendorName;
+    }
+
+    public void setVendorCategory(int vendorCategory) {
+        this.vendorCategory = vendorCategory;
+    }
+
+    public void setContact(Person contact) {
+        this.contact = contact;
     }
 
     public void setAttachedFiles(Uri[] attachedFiles) {

@@ -11,17 +11,16 @@ public class Table {
 
     //TODO addGuest,removeGuest,changeTableNumber
 
-
     public Table(int tableNumber) {
         this.tableNumber = tableNumber;
     }
 
-    public Table(int numOfMembers, int tableNumber) {
+    public Table(int tableNumber, int numOfMembers) {
         this(tableNumber);
         this.numOfMembers = numOfMembers;
     }
 
-    public Table(Guest[] tableMembers, int numOfMembers, int tableNumber) {
+    public Table(int tableNumber, int numOfMembers, Guest[] tableMembers) {
         this(numOfMembers,tableNumber);
         this.tableMembers = tableMembers;
     }
@@ -49,7 +48,7 @@ public class Table {
     }
 
     public void setNumOfMembers(int numOfMembers) {
-        this.numOfMembers = guest;
+        this.numOfMembers = numOfMembers;
     }
 
 
