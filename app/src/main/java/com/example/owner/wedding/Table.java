@@ -1,28 +1,26 @@
 package com.example.owner.wedding;
 
+import java.util.List;
+
 /**
  * Created by Ram on 10/11/2015.
  */
 public class Table {
 
-    private Guest[] tableMembers;
-    private int numOfMembers;
+    private List<Guest> tableMembers;
+    private int maxNumOfGuests;
     private int tableNumber;
+    private int tableType;
 
-    //TODO addGuest,removeGuest,changeTableNumber
+    //TODO addGuest,removeGuest,changeTableNumber,numOfOccupiedPlaces
 
     public Table(int tableNumber) {
         this.tableNumber = tableNumber;
     }
 
     public Table(int tableNumber, int numOfMembers) {
-        this(tableNumber);
-        this.numOfMembers = numOfMembers;
-    }
-
-    public Table(int tableNumber, int numOfMembers, Guest[] tableMembers) {
-        this(numOfMembers,tableNumber);
-        this.tableMembers = tableMembers;
+        this(tableNumber;
+        this.maxNumOfGuests = numOfMembers;
     }
 
     //getters
@@ -30,13 +28,14 @@ public class Table {
         return tableNumber;
     }
 
-    public Guest[] getTableMembers() {
+    public List<Guest> getTableMembers() {
         return tableMembers;
     }
 
     public int getNumOfMembers() {
-        return numOfMembers;
+        return maxNumOfGuests;
     }
+
 
     //setters
     public void setTableNumber(int tableNumber) {
@@ -48,7 +47,13 @@ public class Table {
     }
 
     public void setNumOfMembers(int numOfMembers) {
-        this.numOfMembers = numOfMembers;
+        this.maxNumOfGuests = numOfMembers;
+    }
+
+
+    /* Add new guest to the current table */
+    public void addGuestToTable(Guest guest) {
+        this.tableMembers.
     }
 
 
