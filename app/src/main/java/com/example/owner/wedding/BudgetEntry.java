@@ -1,5 +1,6 @@
 package com.example.owner.wedding;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,15 +8,16 @@ import java.util.List;
  */
 public class BudgetEntry {
 
-    int category;
-    String item;
-    int cost;
-    List<Payment> paymentList;
+    private int category;
+    private String item;
+    private int cost;
+    private List<Payment> paymentList;
 
     public BudgetEntry(int category, String item, int cost) {
         this.category = category;
         this.item = item;
         this.cost = cost;
+        paymentList = new ArrayList<>();
     }
 
     public BudgetEntry(int category, String item, int cost, List<Payment> paymentList) {
@@ -55,4 +57,12 @@ public class BudgetEntry {
     public void setPaymentList(List<Payment> paymentList) {
         this.paymentList = paymentList;
     }
+
+    /*Will add a payment in the end of paymentList*/
+    public void addPayment(Payment payment) {
+        paymentList.add(payment);
+    }
+
+
+
 }

@@ -6,12 +6,12 @@ import java.util.Date;
  * Created by Sivan on 11/10/2015.
  */
 public class Payment {
-    Date date; //TODO: can be TBD - decide what represents TDB
-    int status;
-    int amount; // -1 for TBD
-    int method; // cash, credit, check
-    Date checkDate; //for postponed cheques only
-    String comments;
+    private Date date; //TODO: can be TBD - decide what represents TDB
+    private int status;
+    private int amount; // TODO: can be TBD
+    private int method; // cash, credit, check
+    private Date checkDate; //for postponed cheques only
+    private String comments;
 
     public Payment(Date date, int status, int amount, int method, String comments) {
         this.date = date;
