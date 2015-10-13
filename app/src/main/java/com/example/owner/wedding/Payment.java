@@ -8,7 +8,7 @@ import java.util.Date;
 public class Payment implements Comparable<Payment>{
 
     /*default values*/
-    private Date date = new Date();
+    private Date date = new Date(); /*The Date this instance was created*/
     private int amount = 0; // TODO: can be TBD
     private int method = 1; // cash, credit, check TODO: DB- INIT METHOD_CASH
     private int status;

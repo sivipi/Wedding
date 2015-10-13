@@ -1,6 +1,5 @@
 package com.example.owner.wedding;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -13,18 +12,20 @@ public class BudgetEntry {
     private String item;
     private int cost;
     private List<Payment> paymentList; /*Will always be sorted by dates*/
+    String comments = "";
 
+    /*Cash or credit*/
     public BudgetEntry(int category, String item, int cost) {
         this.category = category;
         this.item = item;
         this.cost = cost;
-        paymentList = new ArrayList<>();
     }
 
-    public BudgetEntry(int category, String item, int cost, List<Payment> paymentList) {
+    /*Cheques*/
+    public BudgetEntry(int category, String item, List<Payment> paymentList) {
         this.category = category;
         this.item = item;
-        this.cost = cost;
+        this.cost = getCostFromPaymentList(paymentList);
         this.paymentList = paymentList;
     }
 
@@ -59,12 +60,30 @@ public class BudgetEntry {
         this.paymentList = paymentList;
     }
 
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
     /*Will add a payment in the end of paymentList*/
     public void addPayment(Payment payment) {
         paymentList.add(payment);
         Collections.sort(paymentList);
     }
 
+    public void deletePayment(Payment payment){
+        paymentList.remove(payment);
+    }
 
+    private int getCostFromPaymentList(List<Payment> paymentList) {
+        int cost = 0;
+        for (Payment payment : paymentList){
+            cost += payment.getAmount();
+        }
+        return cost;
+    }
 
 }
