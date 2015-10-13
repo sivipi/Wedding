@@ -7,6 +7,8 @@ import android.view.MenuItem;
 
 import com.example.owner.wedding.R;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BudgetActivity extends AppCompatActivity {
@@ -48,10 +50,10 @@ public class BudgetActivity extends AppCompatActivity {
         for (BudgetEntry budgetEntry : budgetEntries){
             cost += budgetEntry.getCost();
         }
+
         return cost;
+
     }
-
-
 
     public void saveBudget(){}
     public void loadBudget(){}
