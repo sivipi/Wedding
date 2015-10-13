@@ -1,4 +1,4 @@
-package com.example.owner.wedding;
+package com.example.owner.wedding.guests;
 
 /**
  * Created by Shelly on 11/10/2015.

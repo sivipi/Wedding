@@ -1,4 +1,4 @@
-package com.example.owner.wedding;
+package com.example.owner.wedding.guests;
 
 import java.util.Date;
 

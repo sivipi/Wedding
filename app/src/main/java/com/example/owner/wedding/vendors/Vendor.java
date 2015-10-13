@@ -1,6 +1,8 @@
-package com.example.owner.wedding;
+package com.example.owner.wedding.vendors;
 
 import android.net.Uri;
+
+import com.example.owner.wedding.guests.Person;
 
 /**
  * Created by Ram on 10/11/2015.

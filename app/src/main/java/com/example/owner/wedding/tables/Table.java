@@ -1,4 +1,6 @@
-package com.example.owner.wedding;
+package com.example.owner.wedding.tables;
+
+import com.example.owner.wedding.guests.Guest;
 
 import java.util.List;
 
@@ -19,7 +21,7 @@ public class Table {
     }
 
     public Table(int tableNumber, int numOfMembers) {
-        this(tableNumber;
+        this(tableNumber);
         this.maxNumOfGuests = numOfMembers;
     }
 
@@ -42,7 +44,7 @@ public class Table {
         this.tableNumber = tableNumber;
     }
 
-    public void setTableMembers(Guest[] tableMembers) {
+    public void setTableMembers(List<Guest> tableMembers) {
         this.tableMembers = tableMembers;
     }
 
@@ -53,7 +55,7 @@ public class Table {
 
     /* Add new guest to the current table */
     public void addGuestToTable(Guest guest) {
-        this.tableMembers.
+        this.tableMembers.add(guest);
     }
 
 

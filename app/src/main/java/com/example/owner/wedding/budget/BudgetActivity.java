@@ -1,9 +1,11 @@
-package com.example.owner.wedding;
+package com.example.owner.wedding.budget;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.owner.wedding.R;
 
 public class BudgetActivity extends AppCompatActivity {
 
