@@ -7,8 +7,14 @@ import android.view.MenuItem;
 
 import com.example.owner.wedding.R;
 
+import java.util.List;
+
 public class BudgetActivity extends AppCompatActivity {
 
+    /*TODO:
+     * 1) data structure for planned budget (use same Class BudgetEntry - only 1 for each category - fields: category, cost, comments
+     * 2) data structure for spent budget
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,4 +42,17 @@ public class BudgetActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public int totalCost(List<BudgetEntry> budgetEntries){
+        int cost = 0;
+        for (BudgetEntry budgetEntry : budgetEntries){
+            cost += budgetEntry.getCost();
+        }
+        return cost;
+    }
+
+
+
+    public void saveBudget(){}
+    public void loadBudget(){}
 }

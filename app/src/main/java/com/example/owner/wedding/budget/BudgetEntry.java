@@ -14,19 +14,26 @@ public class BudgetEntry {
     private List<Payment> paymentList; /*Will always be sorted by dates*/
     String comments = "";
 
-    /*Cash or credit*/
+    /* Spent - Cash or credit*/
     public BudgetEntry(int category, String item, int cost) {
         this.category = category;
         this.item = item;
         this.cost = cost;
     }
 
-    /*Cheques*/
+    /*Spent - Cheques*/
     public BudgetEntry(int category, String item, List<Payment> paymentList) {
         this.category = category;
         this.item = item;
         this.cost = getCostFromPaymentList(paymentList);
         this.paymentList = paymentList;
+    }
+
+    /*Planned - use for planned budget*/
+    public BudgetEntry(int category, int cost, String comments) {
+        this.category = category;
+        this.cost = cost;
+        this.comments = comments;
     }
 
     public int getCategory() {
@@ -71,10 +78,12 @@ public class BudgetEntry {
     /*Will add a payment in the end of paymentList*/
     public void addPayment(Payment payment) {
         paymentList.add(payment);
+        this.cost += payment.getAmount();
         Collections.sort(paymentList);
     }
 
     public void deletePayment(Payment payment){
+        this.cost -= payment.getAmount();
         paymentList.remove(payment);
     }
 
