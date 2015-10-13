@@ -5,44 +5,31 @@ import java.util.Date;
 /**
  * Created by Sivan on 11/10/2015.
  */
-public class Payment {
-    private Date date; //TODO: can be TBD - decide what represents TDB
+public class Payment implements Comparable<Payment>{
+
+    /*default values*/
+    private Date date = new Date();
+    private int amount = 0; // TODO: can be TBD
+    private int method = 1; // cash, credit, check TODO: DB- INIT METHOD_CASH
     private int status;
-    private int amount; // TODO: can be TBD
-    private int method; // cash, credit, check
+    private String comments = "";
     private Date checkDate; //for postponed cheques only
-    private String comments;
 
-    public Payment(Date date, int status, int amount, int method, String comments) {
-        this.date = date;
-        this.status = status;
+    /*Cash or Credit*/
+    public Payment(int amount, int method, String comments) {
+        this.status = getDefaultStatus();
         this.amount = amount;
         this.method = method;
         this.comments = comments;
     }
 
-    public Payment(Date date, int status, int amount, int method) {
-        this.date = date;
-        this.status = status;
+    /*Cheque*/
+    public Payment(int amount, int method, String comments, Date checkDate) {
+        this.status = getDefaultStatus();
         this.amount = amount;
         this.method = method;
-    }
-
-    public Payment(Date date, int status, int amount, int method, Date checkDate, String comments) {
-        this.date = date;
-        this.status = status;
-        this.amount = amount;
-        this.method = method;
-        this.checkDate = checkDate;
         this.comments = comments;
-    }
-
-    public Payment(Date date, int status, int amount, int method, Date checkDate) {
-        this.date = date;
-        this.status = status;
-        this.amount = amount;
-        this.method = method;
-        this.checkDate = checkDate;
+        this.checkDate = checkDate; //for postponed cheques only
     }
 
     public Date getDate() {
@@ -91,5 +78,19 @@ public class Payment {
 
     public void setComments(String comments) {
         this.comments = comments;
+    }
+
+    @Override
+    public int compareTo(Payment another) {
+        return date.compareTo(another.getDate());
+    }
+
+    /*Default will be determined by this.date*/
+    private int getDefaultStatus() {
+        Date now = new Date();
+        if (now.before(date))
+            return 1;//Todo: DB-STATUS_NOT_PAID
+        else
+            return 1;//TODO: DB-STATUS-PAID
     }
 }

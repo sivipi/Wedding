@@ -1,6 +1,7 @@
 package com.example.owner.wedding;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ public class BudgetEntry {
     private int category;
     private String item;
     private int cost;
-    private List<Payment> paymentList;
+    private List<Payment> paymentList; /*Will always be sorted by dates*/
 
     public BudgetEntry(int category, String item, int cost) {
         this.category = category;
@@ -61,6 +62,7 @@ public class BudgetEntry {
     /*Will add a payment in the end of paymentList*/
     public void addPayment(Payment payment) {
         paymentList.add(payment);
+        Collections.sort(paymentList);
     }
 
 
