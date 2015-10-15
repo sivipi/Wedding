@@ -7,8 +7,6 @@ import android.view.MenuItem;
 
 import com.example.owner.wedding.R;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class BudgetActivity extends AppCompatActivity {
@@ -28,7 +26,7 @@ public class BudgetActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        budgetCategories = getBudgetCategories_DB();
+        //budgetCategories = getBudgetCategories_DB();
     }
 
     @Override
@@ -72,5 +70,5 @@ public class BudgetActivity extends AppCompatActivity {
     private void saveBudget(){}
     private void loadBudget(){}
     /*List of categories - sub lists of items per category. Show only categories with planned cost*/
-    private List<List<BudgetEntry>> getBudgetCategories_DB() {}
+    //private List<List<BudgetEntry>> getBudgetCategories_DB() {}
 }

@@ -4,7 +4,32 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_budget">BudgetActivity</string>
+    <string name="select_category">בחר קטגוריה</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="number_of_payment">מספר תשלומים</string>
+
+    <string-array name="payment_amount">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="budget_categories">
+        <item>קטגוריה 1 לדוגמא</item>
+        <item>שמלת כלה</item>
+        <item>ביגוז</item>
+        <item>אולם</item>
+        <item>חזון אחרית הימים</item>
+        <item>שם ארוך סתם לראות מה קורה איתו</item>
+        <item>ילד לא צפוי</item>
+        <item>מוישה לאופר</item>
+    </string-array>
+
 </resources>

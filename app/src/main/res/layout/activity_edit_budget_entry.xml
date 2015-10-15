@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -8,26 +8,149 @@
     android:orientation="vertical"
     tools:context="com.example.owner.wedding.budget.editBudgetEntryActivity">
 
-    <TableRow
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="false"
-        android:layout_gravity="center">
+        android:layout_height="match_parent">
 
-        <NumberPicker
+        <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/numberPicker"
-            android:clickable="false" />
+            android:layout_gravity="center_horizontal">
 
-        <NumberPicker
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:id="@+id/budget_daysPicker"
+                />
+
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:id="@+id/budget_monthsPicker" />
+
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:id="@+id/budget_yearsPicker" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:layout_gravity="end"
+            android:gravity="end">
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_column="0"
+                android:id="@+id/budget_cost"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="סכום:"
+                android:layout_column="1"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end">
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:inputType="textAutoCorrect"
+                android:layout_column="0"
+                android:id="@+id/budget_item"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="הוצאה:"
+                android:layout_column="1"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end">
+            <Spinner
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/budget_category"
+                android:entries="@array/budget_categories"
+                android:prompt="@string/select_category"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="קטגוריה:"
+                android:layout_column="1"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end">
+            <Spinner
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/budget_payments_amount"
+                android:entries="@array/payment_amount"
+                android:prompt="@string/number_of_payment"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="מספר תשלומים:"
+                android:layout_column="1"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end">
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:inputType="textAutoCorrect"
+                android:layout_column="0"
+                android:id="@+id/budget_comments"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="הערות:"
+                android:layout_marginBottom="40dp"
+                android:layout_column="1"
+                />
+        </TableRow>
+
+        <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/numberPicker2" />
+            android:layout_gravity="center_horizontal"
+            android:gravity="end">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/budget_cancel_button"
+                android:text="ביטול"
+                android:gravity="center"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/budget_add_button"
+                android:layout_marginLeft="75dp"
+                android:text="הוספה"
+                android:gravity="center"/>
+        </TableRow>
 
-        <NumberPicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/numberPicker3" />
-    </TableRow>
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

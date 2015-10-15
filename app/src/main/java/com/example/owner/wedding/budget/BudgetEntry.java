@@ -39,6 +39,14 @@ public class BudgetEntry implements Comparable<BudgetEntry>{
         this.comments = comments;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     public int getYear(){
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
