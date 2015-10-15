@@ -47,6 +47,8 @@
         </activity>
         <activity android:name=".tables.TablesActivity" >
         </activity>
+        <activity android:name=".budget.editBudgetEntryActivity" >
+        </activity>
     </application>
 
 </manifest>

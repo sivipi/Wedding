@@ -34,11 +34,6 @@ public class Table {
         return tableMembers;
     }
 
-    public int getNumOfMembers() {
-        return maxNumOfGuests;
-    }
-
-
     //setters
     public void setTableNumber(int tableNumber) {
         this.tableNumber = tableNumber;
@@ -48,15 +43,16 @@ public class Table {
         this.tableMembers = tableMembers;
     }
 
-    public void setNumOfMembers(int numOfMembers) {
-        this.maxNumOfGuests = numOfMembers;
-    }
-
-
     /* Add new guest to the current table */
     public void addGuestToTable(Guest guest) {
         this.tableMembers.add(guest);
     }
 
+    public int getMaxNumOfGuests() {
+        return maxNumOfGuests;
+    }
 
+    public void setMaxNumOfGuests(int maxNumOfGuests) {
+        this.maxNumOfGuests = maxNumOfGuests;
+    }
 }

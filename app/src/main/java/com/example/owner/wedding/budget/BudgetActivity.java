@@ -17,6 +17,20 @@ public class BudgetActivity extends AppCompatActivity {
      * 1) data structure for planned budget (use same Class BudgetEntry - only 1 for each category - fields: category, cost, comments
      * 2) data structure for spent budget
      */
+
+    List<List<BudgetEntry>> budgetCategories;
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        budgetCategories = getBudgetCategories_DB();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +59,7 @@ public class BudgetActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public int totalCost(List<BudgetEntry> budgetEntries){
+    private int totalCost(List<BudgetEntry> budgetEntries){
         int cost = 0;
         for (BudgetEntry budgetEntry : budgetEntries){
             cost += budgetEntry.getCost();
@@ -55,6 +69,8 @@ public class BudgetActivity extends AppCompatActivity {
 
     }
 
-    public void saveBudget(){}
-    public void loadBudget(){}
+    private void saveBudget(){}
+    private void loadBudget(){}
+    /*List of categories - sub lists of items per category. Show only categories with planned cost*/
+    private List<List<BudgetEntry>> getBudgetCategories_DB() {}
 }
