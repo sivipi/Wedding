@@ -1,5 +1,7 @@
 package com.example.owner.wedding.guests;
 
+import java.util.List;
+
 /**
  * Created by Shelly on 11/10/2015.
  */
@@ -9,6 +11,7 @@ public class Guest {
     private String extraInformation;
     private int category;
     private Boolean whatsappRsvp;
+    private List<Guest> restrictionsList;
     private int whatsappRsvpStatus;
 
     public Guest(Person contactPerson, int subGuestsNumber, String extraInformation, Boolean whatsappRsvp) {
@@ -24,6 +27,21 @@ public class Guest {
 
     public void setWhatsappRsvpStatus(int whatsappRsvpStatus) {
         this.whatsappRsvpStatus = whatsappRsvpStatus;
+    }
+
+    public void setRestriction(Guest guest) {
+        guest.restrictionsList.add(this);
+        this.restrictionsList.add(guest);
+    }
+
+    public void removeRestriction(Guest guest) {
+
+        guest.restrictionsList.remove(this);
+        this.restrictionsList.remove(guest);
+    }
+
+    public List<Guest> getRestrictionsList() {
+        return restrictionsList;
     }
 
     public Person getContactPerson() {

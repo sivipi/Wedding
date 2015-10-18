@@ -2,7 +2,6 @@ package com.example.owner.wedding.budget;
 
 import java.util.Calendar;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,7 +9,7 @@ import java.util.List;
  */
 public class BudgetEntry implements Comparable<BudgetEntry>{
 
-    Date date = new Date();
+    Calendar date = Calendar.getInstance();
     private int category;
     private String item;
     private int cost;
@@ -39,31 +38,25 @@ public class BudgetEntry implements Comparable<BudgetEntry>{
         this.comments = comments;
     }
 
-    public Date getDate() {
+    public Calendar getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Calendar date) {
         this.date = date;
     }
 
     public int getYear(){
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        return cal.get(Calendar.YEAR)+1900;
+        return date.get(Calendar.YEAR)+1900;
     }
 
     /*January is 0*/
     public int getMonth() {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        return 1 + cal.get(Calendar.MONTH);
+        return 1 + date.get(Calendar.MONTH);
     }
 
     public int getDay() {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        return cal.get(Calendar.DAY_OF_MONTH);
+        return date.get(Calendar.DAY_OF_MONTH);
     }
 
     public int getCategory() {

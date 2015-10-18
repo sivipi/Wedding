@@ -29,6 +29,8 @@ public class TablesActivity extends AppCompatActivity {
 //
 //    }
 
+    private List<Guest> populateCategoryInTables
+
     private class TableSizeComparator implements Comparator<Table> {
 
         @Override

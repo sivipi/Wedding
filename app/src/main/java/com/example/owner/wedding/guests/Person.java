@@ -1,6 +1,6 @@
 package com.example.owner.wedding.guests;
 
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  * Created by Shelly on 11/10/2015.
@@ -9,10 +9,10 @@ public class Person {
     private String firstName;
     private String lastName;
     private String address;
-    private Date birthdate;
+    private Calendar birthdate;
     private String email;
 
-    public Person(String firstName, String lastName, String address, Date birthdate, String email) {
+    public Person(String firstName, String lastName, String address, Calendar birthdate, String email) {
         this(firstName,lastName,address,email);
         this.birthdate = birthdate;
     }
@@ -53,11 +53,11 @@ public class Person {
         this.address = address;
     }
 
-    public Date getBirthdate() {
+    public Calendar getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(Calendar birthdate) {
         this.birthdate = birthdate;
     }
 

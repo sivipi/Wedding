@@ -1,6 +1,6 @@
 package com.example.owner.wedding.budget;
 
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  * Created by Sivan on 11/10/2015.
@@ -8,12 +8,12 @@ import java.util.Date;
 public class Payment implements Comparable<Payment>{
 
     /*default values*/
-    private Date date = new Date(); /*The Date this instance was created*/
+    private Calendar date = Calendar.getInstance(); /*The Date this instance was created*/
     private int amount = 0; // TODO: can be TBD
     private int method = 1; // cash, credit, check TODO: DB- INIT METHOD_CASH
     private int status;
     private String comments = "";
-    private Date checkDate; //for postponed cheques only
+    private Calendar checkDate; //for postponed cheques only
 
     /*Cash or Credit*/
     public Payment(int amount, int method, String comments) {
@@ -24,7 +24,7 @@ public class Payment implements Comparable<Payment>{
     }
 
     /*Cheque*/
-    public Payment(int amount, int method, String comments, Date checkDate) {
+    public Payment(int amount, int method, String comments, Calendar checkDate) {
         this.status = getDefaultStatus();
         this.amount = amount;
         this.method = method;
@@ -32,11 +32,11 @@ public class Payment implements Comparable<Payment>{
         this.checkDate = checkDate; //for postponed cheques only
     }
 
-    public Date getDate() {
+    public Calendar getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Calendar date) {
         this.date = date;
     }
 
@@ -64,11 +64,11 @@ public class Payment implements Comparable<Payment>{
         this.method = method;
     }
 
-    public Date getCheckDate() {
+    public Calendar getCheckDate() {
         return checkDate;
     }
 
-    public void setCheckDate(Date checkDate) {
+    public void setCheckDate(Calendar checkDate) {
         this.checkDate = checkDate;
     }
 
@@ -87,7 +87,7 @@ public class Payment implements Comparable<Payment>{
 
     /*Default will be determined by this.date*/
     private int getDefaultStatus() {
-        Date now = new Date();
+        Calendar now = Calendar.getInstance();
         if (now.before(date))
             return 1;//Todo: DB-STATUS_NOT_PAID
         else

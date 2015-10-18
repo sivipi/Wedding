@@ -11,8 +11,8 @@ import android.widget.Spinner;
 
 import com.example.owner.wedding.R;
 
-import java.util.Date;
-import java.util.List;
+import java.util.Calendar;
+
 
 /*TODO: Make if work ok for edit budget entries*/
 public class editBudgetEntryActivity extends AppCompatActivity {
@@ -22,7 +22,7 @@ public class editBudgetEntryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_budget_entry);
 
-        Date date = new Date();
+        Calendar date = Calendar.getInstance();
         //final BudgetEntry budgetEntry;
         final int numOfPayments = 1;
 
@@ -49,14 +49,15 @@ public class editBudgetEntryActivity extends AppCompatActivity {
         monthsPicker.setMaxValue(12);
         yearsPicker.setMinValue(2000);
         yearsPicker.setMaxValue(2050);
-        daysPicker.setValue(date.getDay());
-        monthsPicker.setValue(date.getMonth());
-        yearsPicker.setValue(date.getYear());
+        daysPicker.setValue(date.get(Calendar.DAY_OF_MONTH));
+        monthsPicker.setValue(date.get(Calendar.MONTH));
+        yearsPicker.setValue(date.get(Calendar.YEAR));
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Date date = new Date(yearsPicker.getValue() - 1900, monthsPicker.getValue() - 1, daysPicker.getValue());
+                Calendar date = Calendar.getInstance();
+                date.set(yearsPicker.getValue() - 1900, monthsPicker.getValue() - 1, daysPicker.getValue());
                 int cost = Integer.parseInt(costText.getText().toString());
                 String item = itemText.getText().toString();
                 int category = Integer.parseInt(categorySpinner.getSelectedItem().toString());
