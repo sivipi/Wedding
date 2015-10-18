@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.example.owner.wedding.R;
 import com.example.owner.wedding.guests.Guest;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -29,7 +30,22 @@ public class TablesActivity extends AppCompatActivity {
 //
 //    }
 
-    private List<Guest> populateCategoryInTables
+    /*First Table is always the EXTRAS Table*/
+    private List<Table> populateListInTables(List<Guest> guestList, List<Table> tableList){
+        //TODO: should i clone guestList first???
+
+        List<Table> answer = new ArrayList<>();
+        Table extras = new Table(0,99);
+
+        for (Guest guest : guestList) {
+            for (Table table : tableList) {
+
+            }
+        }
+
+        /*extras' table is the first table*/
+        answer.add(0,extras);
+    }
 
     private class TableSizeComparator implements Comparator<Table> {
 

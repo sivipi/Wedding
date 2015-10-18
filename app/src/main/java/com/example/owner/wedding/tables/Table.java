@@ -12,6 +12,7 @@ public class Table {
     private List<Guest> tableMembers;
     private int maxNumOfGuests;
     private int tableNumber;
+    private String tabbleName;
     private int tableType;
 
     //TODO addGuest,removeGuest,changeTableNumber,numOfOccupiedPlaces
@@ -54,5 +55,13 @@ public class Table {
 
     public void setMaxNumOfGuests(int maxNumOfGuests) {
         this.maxNumOfGuests = maxNumOfGuests;
+    }
+
+    public String getTabbleName() {
+        return tabbleName;
+    }
+
+    public void setTabbleName(String tabbleName) {
+        this.tabbleName = tabbleName;
     }
 }
