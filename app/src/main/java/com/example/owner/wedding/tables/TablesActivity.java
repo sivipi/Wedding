@@ -45,6 +45,8 @@ public class TablesActivity extends AppCompatActivity {
 
         /*extras' table is the first table*/
         answer.add(0,extras);
+
+        return answer;
     }
 
     private class TableSizeComparator implements Comparator<Table> {

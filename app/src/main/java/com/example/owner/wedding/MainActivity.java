@@ -1,9 +1,17 @@
 package com.example.owner.wedding;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+
+import com.example.owner.wedding.budget.BudgetActivity;
+import com.example.owner.wedding.calendar.CalendarActivity;
+import com.example.owner.wedding.vendors.VendorsActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -13,7 +21,49 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final ImageButton budgetBtn = (ImageButton)findViewById(R.id.budget_btn);
+        final ImageButton vendorsBtn = (ImageButton)findViewById(R.id.vendors_btn);
+        final ImageButton calendarBtn = (ImageButton)findViewById(R.id.calendar_btn);
+        final ImageButton guestsBtn = (ImageButton)findViewById(R.id.guests_btn);
+
+        /*Listeners for the ImageButtons*/
+
+        budgetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BudgetActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        vendorsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, VendorsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        calendarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        guestsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BudgetActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
+
 //Comment for testing
     //another check
     @Override

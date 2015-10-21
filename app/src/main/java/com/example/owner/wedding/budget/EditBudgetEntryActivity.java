@@ -15,7 +15,7 @@ import java.util.Calendar;
 
 
 /*TODO: Make if work ok for edit budget entries*/
-public class editBudgetEntryActivity extends AppCompatActivity {
+public class EditBudgetEntryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

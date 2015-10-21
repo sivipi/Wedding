@@ -30,21 +30,28 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".vendors.VendorsActivity" >
-        </activity>
-        <activity android:name=".guests.GuestsActivity" >
-        </activity>
-        <activity android:name=".tables.TablesActivity" >
-        </activity>
-        <activity android:name=".budget.editBudgetEntryActivity" >
+        <activity
+            android:name=".vendors.VendorsActivity"
+            android:label="Vendors Activity" >
         </activity>
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" >
+            android:name=".guests.GuestsActivity"
+            android:label="Guests Activity" >
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".tables.TablesActivity"
+            android:label="Tables Activity" >
+        </activity>
+        <activity
+            android:name=".budget.EditBudgetEntryActivity"
+            android:label="Budget Entry Activity" >
+        </activity>
+        <activity
+            android:name=".login.LoginActivity"
             android:label="@string/title_activity_login" >
+        </activity>
+        <activity android:name=".calendar.CalendarActivity"
+            android:label="Calendar Activity">
         </activity>
     </application>
 

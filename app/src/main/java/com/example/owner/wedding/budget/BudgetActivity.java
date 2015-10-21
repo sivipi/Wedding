@@ -1,9 +1,12 @@
 package com.example.owner.wedding.budget;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.owner.wedding.R;
 
@@ -16,6 +19,7 @@ public class BudgetActivity extends AppCompatActivity {
      * 2) data structure for spent budget
      */
 
+    Button newExpenseBtn = (Button)findViewById(R.id.budget_newExpense);
     List<List<BudgetEntry>> budgetCategories;
 
     @Override
@@ -33,6 +37,15 @@ public class BudgetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget);
+
+        newExpenseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BudgetActivity.this, EditBudgetEntryActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
