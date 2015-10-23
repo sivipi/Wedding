@@ -29,8 +29,9 @@ public class TablesActivity extends AppCompatActivity {
 //        }
 //
 //    }
-
     /*First Table is always the EXTRAS Table*/
+
+
     private List<Table> populateListInTables(List<Guest> guestList, List<Table> tableList){
         //TODO: should i clone guestList first???
 
@@ -49,28 +50,4 @@ public class TablesActivity extends AppCompatActivity {
         return answer;
     }
 
-    private class TableSizeComparator implements Comparator<Table> {
-
-        @Override
-        public int compare(Table lhs, Table rhs) {
-
-            int lhsMaxNumberOfGuests = lhs.getMaxNumOfGuests();
-            int rhsMaxNumberOfGuests = rhs.getMaxNumOfGuests();
-
-            return Integer.compare(lhsMaxNumberOfGuests,rhsMaxNumberOfGuests);
-        }
-    }
-
-    private class TableFreePlacesComparator implements Comparator<Table> {
-
-        @Override
-        public int compare(Table lhs, Table rhs) {
-
-            int lhsGuestsLeft = lhs.getMaxNumOfGuests() - lhs.getTableMembers().size();
-            int rhsGuestsLeft = rhs.getMaxNumOfGuests() - rhs.getTableMembers().size();
-
-            return Integer.compare(lhsGuestsLeft,rhsGuestsLeft);
-
-        }
-    }
 }
