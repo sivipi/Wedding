@@ -8,13 +8,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-
 import com.example.owner.wedding.budget.BudgetActivity;
 import com.example.owner.wedding.calendar.CalendarActivity;
 import com.example.owner.wedding.guests.Guest;
-import com.example.owner.wedding.guests.GuestsActivity;
 import com.example.owner.wedding.login.LoginActivity;
 import com.example.owner.wedding.vendors.VendorsActivity;
 
@@ -63,12 +60,10 @@ public class MainActivity extends AppCompatActivity {
         guestsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, GuestsActivity.class);
+                Intent intent = new Intent(MainActivity.this, BudgetActivity.class);
                 startActivity(intent);
             }
         });
-
-
 
     }
 

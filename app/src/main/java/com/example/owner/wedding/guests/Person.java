@@ -9,10 +9,12 @@ public class Person {
     private String firstName;
     private String lastName;
     private String address;
+    private Calendar birthdate;
     private String email;
 
     public Person(String firstName, String lastName, String address, Calendar birthdate, String email) {
         this(firstName,lastName,address,email);
+        this.birthdate = birthdate;
     }
 
     public Person(String firstName, String lastName, String address, String email) {
@@ -49,6 +51,14 @@ public class Person {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Calendar getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(Calendar birthdate) {
+        this.birthdate = birthdate;
     }
 
     public String getEmail() {

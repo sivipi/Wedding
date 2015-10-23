@@ -12,7 +12,10 @@ public class Table {
     private List<Guest> tableMembers;
     private int maxNumOfGuests;
     private int tableNumber;
-    private String tableName;
+    private String tabbleName;
+    private int tableType;
+
+    //TODO addGuest,removeGuest,changeTableNumber,numOfOccupiedPlaces
 
     public Table(int tableNumber) {
         this.tableNumber = tableNumber;
@@ -32,14 +35,6 @@ public class Table {
         return tableMembers;
     }
 
-    public int getMaxNumOfGuests() {
-        return maxNumOfGuests;
-    }
-
-    public String getTableName() {
-        return tableName;
-    }
-
     //setters
     public void setTableNumber(int tableNumber) {
         this.tableNumber = tableNumber;
@@ -49,29 +44,24 @@ public class Table {
         this.tableMembers = tableMembers;
     }
 
-    public void setMaxNumOfGuests(int maxNumOfGuests) { this.maxNumOfGuests = maxNumOfGuests; }
-
-    public void setTableName(String tableName) {
-        this.tableName = tableName;
-    }
-
     /* Add new guest to the current table */
     public void addGuestToTable(Guest guest) {
         this.tableMembers.add(guest);
     }
 
-    /* Remove guest from current table*/
-    public void removeGuestFromTable(Guest guest){
-        this.tableMembers.remove(guest);
+    public int getMaxNumOfGuests() {
+        return maxNumOfGuests;
     }
 
-    /*return the number of occupied places in the table*/
-    public int numOfOccupiedPlaces(){ return this.tableMembers.size(); }
+    public void setMaxNumOfGuests(int maxNumOfGuests) {
+        this.maxNumOfGuests = maxNumOfGuests;
+    }
 
-    /*return the number of free places in the table*/
-    public int numOfFreePlaces(){ return (this.getMaxNumOfGuests() - this.numOfOccupiedPlaces());}
+    public String getTabbleName() {
+        return tabbleName;
+    }
 
-
-
-
+    public void setTabbleName(String tabbleName) {
+        this.tabbleName = tabbleName;
+    }
 }

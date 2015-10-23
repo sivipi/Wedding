@@ -11,7 +11,8 @@ public class Guest {
     private String extraInformation;
     private int category;
     private Boolean whatsappRsvp;
-    private int RsvpStatus;
+    private List<Guest> restrictionsList;
+    private int whatsappRsvpStatus;
 
     public Guest(Person contactPerson, int subGuestsNumber, String extraInformation, Boolean whatsappRsvp) {
         this.contactPerson = contactPerson;
@@ -20,12 +21,27 @@ public class Guest {
         this.whatsappRsvp = whatsappRsvp;
     }
 
-    public int getRsvpStatus() {
-        return RsvpStatus;
+    public int getWhatsappRsvpStatus() {
+        return whatsappRsvpStatus;
     }
 
-    public void setRsvpStatus(int rsvpStatus) {
-        this.RsvpStatus = rsvpStatus;
+    public void setWhatsappRsvpStatus(int whatsappRsvpStatus) {
+        this.whatsappRsvpStatus = whatsappRsvpStatus;
+    }
+
+    public void setRestriction(Guest guest) {
+        guest.restrictionsList.add(this);
+        this.restrictionsList.add(guest);
+    }
+
+    public void removeRestriction(Guest guest) {
+
+        guest.restrictionsList.remove(this);
+        this.restrictionsList.remove(guest);
+    }
+
+    public List<Guest> getRestrictionsList() {
+        return restrictionsList;
     }
 
     public Person getContactPerson() {

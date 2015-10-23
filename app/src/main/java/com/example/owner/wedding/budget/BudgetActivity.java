@@ -19,7 +19,7 @@ public class BudgetActivity extends AppCompatActivity {
      * 2) data structure for spent budget
      */
 
-
+    Button newExpenseBtn = (Button)findViewById(R.id.budget_newExpense);
     List<List<BudgetEntry>> budgetCategories;
 
     @Override
@@ -37,7 +37,7 @@ public class BudgetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget);
-        Button newExpenseBtn = (Button)findViewById(R.id.budget_newExpense);
+
         newExpenseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
