@@ -1,6 +1,8 @@
 package com.example.owner.wedding;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,7 +13,13 @@ import android.widget.ImageButton;
 
 import com.example.owner.wedding.budget.BudgetActivity;
 import com.example.owner.wedding.calendar.CalendarActivity;
+import com.example.owner.wedding.guests.Guest;
+import com.example.owner.wedding.guests.GuestsActivity;
+import com.example.owner.wedding.login.LoginActivity;
 import com.example.owner.wedding.vendors.VendorsActivity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -55,10 +63,12 @@ public class MainActivity extends AppCompatActivity {
         guestsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, BudgetActivity.class);
+                Intent intent = new Intent(MainActivity.this, GuestsActivity.class);
                 startActivity(intent);
             }
         });
+
+
 
     }
 
@@ -88,5 +98,32 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        /*Check Login Status*/
+        SharedPreferences sp = getPreferences(Activity.MODE_PRIVATE);
+        int user_id;
+        if ((user_id=sp.getInt("user_id", -1)) == -1){ //First Login
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        } else {
+            //TODO: get All unapproved tasks - if there are some: fragment
+            List<Guest> unGuests = new ArrayList<>();
+            List<Guest> unBudgetEntries = new ArrayList<>();
+            List<Guest> unCalendar = new ArrayList<>();
+            List<Guest> unVendors = new ArrayList<>();
+            List<Guest> unTables = new ArrayList<>();
+
+            int totalTasks = 0;
+            totalTasks += unGuests.size() + unBudgetEntries.size() + unCalendar.size() + unVendors.size() + unTables.size();
+
+            if (totalTasks != 0){
+                //TODO: build accepting fragment - right/left swipe. Doesn't have to accept!
+            }
+        }
     }
 }
