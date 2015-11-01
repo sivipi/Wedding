@@ -1,8 +1,10 @@
 package com.example.owner.wedding.budget;
 
+import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Sivan on 11/10/2015.
@@ -119,7 +121,17 @@ public class BudgetEntry implements Comparable<BudgetEntry>{
     }
 
     @Override
+    public String toString() {
+        return NumberFormat.getNumberInstance(Locale.US).format(this.cost);
+    }
+
+    @Override
     public int compareTo(BudgetEntry another) {
         return this.date.compareTo(another.date);
+    }
+
+    public boolean hasPayments(){
+        if (paymentList==null) return false;
+        return (paymentList.size()>0);
     }
 }

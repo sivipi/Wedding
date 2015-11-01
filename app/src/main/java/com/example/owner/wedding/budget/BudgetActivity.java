@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.example.owner.wedding.R;
 
@@ -19,8 +20,8 @@ public class BudgetActivity extends AppCompatActivity {
      * 2) data structure for spent budget
      */
 
-    Button newExpenseBtn = (Button)findViewById(R.id.budget_newExpense);
-    List<List<BudgetEntry>> budgetCategories;
+    Button newExpenseBtn;
+    //BudgetEntry[] budgetEntries;
 
     @Override
     protected void onPause() {
@@ -38,6 +39,7 @@ public class BudgetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget);
 
+        newExpenseBtn = (Button)findViewById(R.id.budget_newExpense);
         newExpenseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +48,24 @@ public class BudgetActivity extends AppCompatActivity {
             }
         });
 
+        ListView listView = (ListView)findViewById(R.id.list_view);
+        /*TODO:TESTING ONLY*/
+        BudgetEntry[] budgetEntries = {new BudgetEntry(1,"חליפת חתן",1500), new BudgetEntry(1,"חליפת חתן",23), new BudgetEntry(1,"בייביסיטר לחתול",180),
+                new BudgetEntry(1,"עניבה",2345), new BudgetEntry(1,"קישוטי רכב",130), new BudgetEntry(1,"סידורי פרחים",1500), new BudgetEntry(1,"די ג'יי",1600),
+                new BudgetEntry(1,"גן הורדים",22000), new BudgetEntry(1,"זר כלה",250), new BudgetEntry(1,"מקווה",18), new BudgetEntry(1,"צלם סטילס",1850),
+                new BudgetEntry(1,"פיצוחים",150), new BudgetEntry(1,"טבעות",1350), new BudgetEntry(1,"אקום",238), new BudgetEntry(1,"צלם וידאו",2200),
+                new BudgetEntry(1,"רב",1200), new BudgetEntry(1,"שמלה כלה",7500), new BudgetEntry(1,"הזמנות",420), new BudgetEntry(1,"אבטחה",500),
+                new BudgetEntry(1,"מוישה לאופר",112000), new BudgetEntry(1,"שוחד",1322), new BudgetEntry(1,"מעטפות",84), new BudgetEntry(1,"שומרים בחניון",650)};
+
+
+       // BudgetEntry[] budgetEntries = {new BudgetEntry(1,"חליפת חתן",1500), new BudgetEntry(1,"חליפת חתן",23)};
+        /*TODO:TESTING ONLY*/
+
+        BudgetListAdapter adapter = new BudgetListAdapter(this,budgetEntries);
+        listView.setAdapter(adapter);
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="match_parent" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/budget_adapter_linear_layout">
+
+    <LinearLayout android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="end">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal"
+            android:text="2,000"
+            android:textColor="#298A08"
+            android:textSize="20sp"
+            android:inputType="text"
+            android:layout_weight="30"
+            android:id="@+id/line_cost"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="שמלת כלה - מקדמה"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/line_item"
+            android:layout_weight="75"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@android:drawable/ic_input_add"
+            android:id="@+id/line_edit"
+            android:layout_weight="5"/>
+
+    </LinearLayout>
+</LinearLayout>

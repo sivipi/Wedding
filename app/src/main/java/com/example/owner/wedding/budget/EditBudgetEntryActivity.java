@@ -60,7 +60,7 @@ public class EditBudgetEntryActivity extends AppCompatActivity {
                 date.set(yearsPicker.getValue() - 1900, monthsPicker.getValue() - 1, daysPicker.getValue());
                 int cost = Integer.parseInt(costText.getText().toString());
                 String item = itemText.getText().toString();
-                int category = Integer.parseInt(categorySpinner.getSelectedItem().toString());
+                int category = Integer.parseInt(categorySpinner.getSelectedItem().toString()); //TODO: integrate category(int) with category(strings)
                 String comments = commentsText.getText().toString();
                 int paymentsAmount = numOfPayments;
 
@@ -72,13 +72,6 @@ public class EditBudgetEntryActivity extends AppCompatActivity {
                     budgetEntry.setDate(date);
                     /*TODO: add the payments list to the budgetEntry*/
                 }
-            }
-        });
-
-        paymentsSpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //TODO: complete
             }
         });
 

@@ -95,30 +95,29 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        /*Check Login Status*/
-        SharedPreferences sp = getPreferences(Activity.MODE_PRIVATE);
-        int user_id;
-        if ((user_id=sp.getInt("user_id", -1)) == -1){ //First Login
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
-        } else {
-            //TODO: get All unapproved tasks - if there are some: fragment
-            List<Guest> unGuests = new ArrayList<>();
-            List<Guest> unBudgetEntries = new ArrayList<>();
-            List<Guest> unCalendar = new ArrayList<>();
-            List<Guest> unVendors = new ArrayList<>();
-            List<Guest> unTables = new ArrayList<>();
-
-            int totalTasks = 0;
-            totalTasks += unGuests.size() + unBudgetEntries.size() + unCalendar.size() + unVendors.size() + unTables.size();
-
-            if (totalTasks != 0){
-                //TODO: build accepting fragment - right/left swipe. Doesn't have to accept!
-            }
-        }
-    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        /*Check Login Status*/
+//        SharedPreferences sp = getPreferences(Activity.MODE_PRIVATE);
+//        int user_id;
+//        if ((user_id=sp.getInt("user_id", -1)) == -1){ //First Login
+//            Intent intent = new Intent(this, LoginActivity.class);
+//            startActivity(intent);
+//        } else {
+//            //TODO: get All unapproved tasks - if there are some: fragment
+//            List<Guest> unGuests = new ArrayList<>();
+//            List<Guest> unBudgetEntries = new ArrayList<>();
+//            List<Guest> unCalendar = new ArrayList<>();
+//            List<Guest> unVendors = new ArrayList<>();
+//            List<Guest> unTables = new ArrayList<>();
+//
+//            int totalTasks = 0;
+//            totalTasks += unGuests.size() + unBudgetEntries.size() + unCalendar.size() + unVendors.size() + unTables.size();
+//
+//            if (totalTasks != 0){
+//                //TODO: build accepting fragment - right/left swipe. Doesn't have to accept!
+//            }
+//        }
+//    }
 }
